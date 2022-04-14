@@ -1,2 +1,3 @@
-# Tweets_Sentiment_Classification
-2022S1 - COMP30024 - Machine Learning - Project 2
+# Sentiment Classification of Tweets
+
+* [Specification](spec/ass2_spec.pdf)
