@@ -3,7 +3,7 @@
 * [Specification](spec/ass2_spec.pdf)
 
 ## Progress Check List
-> Data Preprocessing
+> **Data Preprocessing**
 * Vectorization
   * Bag of Words
   * TFIDF
@@ -23,7 +23,7 @@
 * https://towardsdatascience.com/nlp-text-preprocessing-a-practical-guide-and-template-d80874676e79
 * https://gist.github.com/jiahao87/d57a2535c2ed7315390920ea9296d79f
 
-> Feature Selection
+> **Feature Selection**
 * SelectKBest
   * Chi-Square (chi2)
   * F-Test (f_classif)
@@ -31,14 +31,14 @@
 * Variance Threshold
 * https://scikit-learn.org/stable/modules/classes.html#module-sklearn.feature_selection
 
-> Data Split
+> **Data Split**
 * Maximize Validation Accuracy
 * Choice of Test Size: 6099 / 21802
 * (Random) Hold-out
 * K-fold Cross-Validation
 * https://scikit-learn.org/stable/modules/cross_validation.html?highlight=cross_validation#cross-validation-and-model-selection
 
-> Model Selection
+> **Model Selection**
 
 > 
 
