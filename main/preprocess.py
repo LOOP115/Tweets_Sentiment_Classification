@@ -7,7 +7,7 @@ from sklearn.model_selection import KFold
 from sklearn.model_selection import train_test_split
 from sklearn.dummy import DummyClassifier
 import re
-
+from data_cleaning import text_preprocessing
 
 
 
@@ -45,8 +45,8 @@ X_test_need_to_clean.replace("\b*#\S*", '', regex=True, inplace=True)
 
 # print(X_train_need_to_clean)
 
-# for i in range(X_train_need_to_clean.shape[0]):
-#     X_train_need_to_clean.loc[i, 0] = text_preprocessing(X_train_need_to_clean.loc[i, 0])
+for i in range(X_train_need_to_clean.shape[0]):
+    X_train_need_to_clean.loc[i, 0] = text_preprocessing(X_train_need_to_clean.loc[i, 0])
 
 # print(X_train_need_to_clean)s
 
@@ -148,19 +148,20 @@ print(pd.DataFrame(clf.cv_results_)[['solver','penalty', 'C', 'max_iter', 'multi
 # print(f"logistic model score: { logi_model.score(X_test_s,y_test_s)}")
 
 # ### svm
-# from sklearn.svm import SVC
+from sklearn.svm import SVC
 # svm_model = SVC(kernel="linear", C=0.1).fit(X_train_s, y_train_s)
 # svm_model.score(X_test_s,y_test_s)
 # print(f"svm model score: ", svm_model.score(X_test_s,y_test_s))
 svm_hyper = {
-    'degree': [3, 5, 10, 15]
-    ''
+    'degree': [3, 5, 10, 15],
+    'gamma': [1,0.1,0.01,0.001],
     'C': [1e-5, 1e-4, 1e-3, 1e-2, 1e-1, 1, 10, 100, 1000],
     'kernel': ['linear', 'poly', 'rbf', 'sigmod'],
     'max_iter': [-1, 100, 500, 1000],
     'decision_function_shape': ['ovo', 'ovr']
-
 }
+
+search_svm = GridSearchCV(SVC(), svm_hyper, scoring='accuracy', cv=5)
 
 
 #

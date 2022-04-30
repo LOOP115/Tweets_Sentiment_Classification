@@ -1,7 +1,6 @@
-# create by group member, JIAHAO CHEN
 # https://gist.github.com/jiahao87/d57a2535c2ed7315390920ea9296d79f
 
-
+# import en_core_web_sm
 from bs4 import BeautifulSoup
 import spacy
 import unidecode
@@ -10,6 +9,7 @@ import contractions
 
 
 nlp = spacy.load('en_core_web_md')
+# nlp = en_core_web_sm.load()
 
 # exclude words from spacy stopwords list
 deselect_stop_words = ['no', 'not']
