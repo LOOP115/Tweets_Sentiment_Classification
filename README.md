@@ -10,12 +10,12 @@
   * Doc2Vec
   * Word2Vec
 * Data Cleaning (冲榜必备!)
-  * Remove HTML tags
+  ~~V Remove HTML tags~~ 
   * Remove extra whitespaces
   * Convert accented characters to ASCII characters
   * Expand contractions
-  * Remove special characters
-  * Lowercase all texts
+  ~~V Remove special characters~~
+  ~~V Lowercase all texts~~
   * Convert number words to numeric form
   * Remove numbers
   * Remove stopwords
