@@ -10,7 +10,7 @@
   * Doc2Vec
   * Word2Vec
 * Data Cleaning (冲榜必备!)
-  ~~V Remove HTML tags~~ 
+  ~~V Remove URL tags~~ 
   * Remove extra whitespaces
   * Convert accented characters to ASCII characters
   * Expand contractions
@@ -31,7 +31,7 @@
 * Variance Threshold
 * https://scikit-learn.org/stable/modules/classes.html#module-sklearn.feature_selection
 
-> **Data Splitting**
+> **~~Data Splitting~~**
 * Maximize Validation Accuracy
 * Choice of Test Size: 6099 / 21802
 * (Random) Hold-out
@@ -39,14 +39,14 @@
 * https://scikit-learn.org/stable/modules/cross_validation.html?highlight=cross_validation#cross-validation-and-model-selection
 
 > **Machine Learning Models**
-* Baseline Model: 0-R
+~~* Baseline Model: 0-R~~
 * Naive Bayes
 * KNN
 * Decision Tree
-* Logistic Regression
-* SVM
-* Random Forest
-* Stacking
+* ~~Logistic Regression~~
+* ~~SVM~~
+* ~~Random Forest~~
+* ~~Stacking~~
 * Hyperparameter Tuning: Grid Search
 
 > **Evaluation**

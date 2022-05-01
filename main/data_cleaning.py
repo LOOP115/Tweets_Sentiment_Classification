@@ -1,14 +1,12 @@
 # https://gist.github.com/jiahao87/d57a2535c2ed7315390920ea9296d79f
 
-# import en_core_web_sm
 from bs4 import BeautifulSoup
 import spacy
 import unidecode
 from word2number import w2n
 import contractions
 
-
-nlp = spacy.load('en_core_web_md')
+nlp = spacy.load(r'C:\Users\laizh\AppData\Local\Programs\Python\Python310\Lib\site-packages\en_core_web_sm\en_core_web_sm-3.3.0')
 # nlp = en_core_web_sm.load()
 
 # exclude words from spacy stopwords list
@@ -91,7 +89,3 @@ def text_preprocessing(text, accented_chars=True, contractions=True,
     return clean_text
 
 
-
-string = "ksdjaglkjash #@14325 sadfw"
-
-print(text_preprocessing(string))
