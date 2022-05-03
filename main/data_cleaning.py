@@ -88,4 +88,4 @@ def text_preprocessing(text, accented_chars=True, contractions=True,
             clean_text.append(edit)
     return clean_text
 
-
+print(text_preprocessing("1 2 3 2nd 4th!"))
