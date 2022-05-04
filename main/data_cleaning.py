@@ -6,7 +6,7 @@ import unidecode
 from word2number import w2n
 import contractions
 
-nlp = spacy.load(r'C:\Users\laizh\AppData\Local\Programs\Python\Python310\Lib\site-packages\en_core_web_sm\en_core_web_sm-3.3.0')
+nlp = spacy.load('en_core_web_sm')
 # nlp = en_core_web_sm.load()
 
 # exclude words from spacy stopwords list
@@ -88,4 +88,4 @@ def text_preprocessing(text, accented_chars=True, contractions=True,
             clean_text.append(edit)
     return clean_text
 
-print(text_preprocessing("1 2 3 2nd 4th!"))
+# print(text_preprocessing("1 2 3 2nd 4th!"))
