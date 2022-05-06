@@ -1,4 +1,5 @@
 # https://gist.github.com/jiahao87/d57a2535c2ed7315390920ea9296d79f
+import string
 
 from bs4 import BeautifulSoup
 import spacy
@@ -68,7 +69,7 @@ def text_preprocessing(text, accented_chars=True, contractions=True,
         if stop_words == True and token.is_stop and token.pos_ != 'NUM':
             flag = False
         # remove punctuations
-        if punctuations == True and token.pos_ == 'PUNCT' and flag == True:
+        if punctuations == True and token.is_punct and flag == True:
             flag = False
         # remove special characters
         if special_chars == True and token.pos_ == 'SYM' and flag == True:
@@ -88,4 +89,15 @@ def text_preprocessing(text, accented_chars=True, contractions=True,
             clean_text.append(edit)
     return clean_text
 
-# print(text_preprocessing("1 2 3 2nd 4th!"))
+
+# import pandas as pd
+# train_data = pd.read_csv("Train.csv", sep=',')
+# X_train_raw = [x[0] for x in train_data[['text']].values]
+# X_train_need_to_clean = pd.DataFrame(X_train_raw)
+# X_train_need_to_clean.replace("\b*https?:\S*", '', regex=True, inplace=True)
+# X_train_need_to_clean.replace("\b*@\S*", '', regex=True, inplace=True)
+# X_train_need_to_clean.replace("\b*#\S*", '', regex=True, inplace=True)
+# for i in range(X_train_need_to_clean.shape[0]):
+#     X_train_need_to_clean.loc[i, 0] = ' '.join(text_preprocessing(X_train_need_to_clean.loc[i, 0], remove_html=False))
+#
+#
