@@ -11,9 +11,19 @@ nlp = spacy.load('en_core_web_sm')
 # nlp = en_core_web_sm.load()
 
 # exclude words from spacy stopwords list
-deselect_stop_words = ['no', 'not']
-for w in deselect_stop_words:
-    nlp.vocab[w].is_stop = False
+
+# for w in list(nlp.Defaults.stop_words):
+#     nlp.vocab[w].is_stop = False
+#     print(nlp.vocab[w].is_stop)
+
+my_stop_words = ['they', 'its', 'them', 'and', 'to', 'the', 'be', 'to', 'in', 'and', 'of',
+                 'on', 'for', ' it', 'you', 'with', 'my', 'at', 'I', 'as', 'from', 'about', 'his', 'or',
+                 'she', 'your', 'an', 'this', 'that', 'we', 'here','there', 'as']
+
+def remove_mystopwords(sentence):
+    tokens = sentence.split(" ")
+    tokens_filtered= [word for word in tokens if not word in my_stop_words]
+    return (" ").join(tokens_filtered)
 
 
 def strip_html_tags(text):
@@ -101,3 +111,6 @@ def text_preprocessing(text, accented_chars=True, contractions=True,
 #     X_train_need_to_clean.loc[i, 0] = ' '.join(text_preprocessing(X_train_need_to_clean.loc[i, 0], remove_html=False))
 #
 #
+
+text = 'my hour shift will consist of I think about ed sheeran tomorrow'
+print(text_preprocessing(text))
