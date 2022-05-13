@@ -1,6 +1,0 @@
-neutral: 0.3465
-positive: 0.32349
-negative 0.33005
-evenly distributed
-
-
